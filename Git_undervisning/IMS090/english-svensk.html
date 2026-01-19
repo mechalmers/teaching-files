@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English–Swedish Glossary: Statics & Strength of Materials</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #12182a;
+      --text: #e8ecf5;
+      --muted: #b8c0d4;
+      --line: rgba(232,236,245,0.12);
+      --accent: #7aa2ff;
+      --header: rgba(122,162,255,0.12);
+      --rowHover: rgba(255,255,255,0.04);
+      --chip: rgba(255,255,255,0.06);
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 15% 0%, rgba(122,162,255,0.18), transparent 60%),
+                  radial-gradient(900px 500px at 85% 10%, rgba(116,214,255,0.10), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+    header {
+      padding: 22px 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      backdrop-filter: blur(8px);
+    }
+    h1 {
+      margin: 0 0 6px 0;
+      font-size: 1.45rem;
+      letter-spacing: 0.2px;
+    }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      margin-top: 16px;
+      align-items: center;
+    }
+    .search {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.03);
+    }
+    .search input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--chip);
+      color: var(--muted);
+      padding: 7px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.86rem;
+      user-select: none;
+    }
+    .chip.active {
+      border-color: rgba(122,162,255,0.55);
+      color: var(--text);
+      background: rgba(122,162,255,0.12);
+    }
+
+    section {
+      margin-top: 16px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+    h2 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+    .count {
+      color: var(--muted);
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: var(--header);
+      color: var(--text);
+      font-size: 0.88rem;
+      letter-spacing: 0.35px;
+      text-transform: uppercase;
+    }
+    tbody tr:hover td {
+      background: var(--rowHover);
+    }
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .muted {
+      color: var(--muted);
+    }
+    .footer {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      padding: 0 4px;
+    }
+    @media (max-width: 640px) {
+      .controls { grid-template-columns: 1fr; }
+      .chips { justify-content: flex-start; }
+      th, td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>English–Swedish Glossary</h1>
+      <p class="subtitle">Statics &amp; Strength of Materials (Statik &amp; Hållfasthetslära)</p>
+
+      <div class="controls">
+        <div class="search" role="search">
+          <span class="muted">🔎</span>
+          <input id="q" type="search" placeholder="Sök (t.ex. shear, moment, spänning)..." aria-label="Sök i ordlistan">
+        </div>
+
+        <div class="chips" aria-label="Filter">
+          <span class="chip active" data-filter="all">Alla</span>
+          <span class="chip" data-filter="core">Core</span>
+          <span class="chip" data-filter="extra">Additional</span>
+        </div>
+      </div>
+    </header>
+
+    <section id="core-section" data-section="core">
+      <div class="section-header">
+        <h2>Core terminology</h2>
+        <div class="count" id="core-count"></div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:50%">English</th>
+            <th style="width:50%">Svenska</th>
+          </tr>
+        </thead>
+        <tbody id="core-body">
+          <tr><td>Statics</td><td>Statik</td></tr>
+          <tr><td>Strength of Materials</td><td>Hållfasthetslära</td></tr>
+          <tr><td>Force</td><td>Kraft</td></tr>
+          <tr><td>Moment</td><td>Moment</td></tr>
+          <tr><td>Equilibrium</td><td>Jämvikt</td></tr>
+          <tr><td>Support Reaction</td><td>Stödreaktion</td></tr>
+          <tr><td>Free Body Diagram (FBD)</td><td>Friläggning / Friläggningsdiagram</td></tr>
+          <tr><td>Load</td><td>Last</td></tr>
+          <tr><td>Axial Load</td><td>Axialkraft</td></tr>
+          <tr><td>Shear Force</td><td>Tvärkraft</td></tr>
+          <tr><td>Bending Moment</td><td>Böjmoment</td></tr>
+          <tr><td>Stress</td><td>Spänning</td></tr>
+          <tr><td>Strain</td><td>Töjning</td></tr>
+          <tr><td>Elasticity</td><td>Elasticitet</td></tr>
+          <tr><td>Modulus of Elasticity (Young’s Modulus)</td><td>Elasticitetsmodul (E-modul)</td></tr>
+          <tr><td>Poisson’s Ratio</td><td>Poissons tal</td></tr>
+          <tr><td>Yield Strength</td><td>Sträckgräns</td></tr>
+          <tr><td>Ultimate Strength</td><td>Brottgräns</td></tr>
+          <tr><td>Beam</td><td>Balk</td></tr>
+          <tr><td>Column</td><td>Pelare</td></tr>
+          <tr><td>Torsion</td><td>Vridning</td></tr>
+          <tr><td>Factor of Safety</td><td>Säkerhetsfaktor</td></tr>
+          <tr><td>Boundary Conditions</td><td>Randvillkor</td></tr>
+          <tr><td>Deflection</td><td>Utböjning</td></tr>
+          <tr><td>Moment of Inertia (Second Moment of Area)</td><td>Areans tröghetsmoment</td></tr>
+          <tr><td>Shear Stress</td><td>Skjuvspänning</td></tr>
+          <tr><td>Buckling</td><td>Knäckning</td></tr>
+          <tr><td>Tensile Load</td><td>Dragbelastning</td></tr>
+          <tr><td>Compressive Load</td><td>Tryckbelastning</td></tr>
+          <tr><td>Stiffness</td><td>Styvhet</td></tr>
+          <tr><td>Distributed Load</td><td>Utbredd last</td></tr>
+          <tr><td>Point Load</td><td>Punktlast</td></tr>
+          <tr><td>Shear Force Diagram</td><td>Tvärkraftsdiagram</td></tr>
+          <tr><td>Bending Moment Diagram</td><td>Böjmomentdiagram</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="extra-section" data-section="extra">
+      <div class="section-header">
+        <h2>Additional commonly used terms</h2>
+        <div class="count" id="extra-count"></div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:50%">English</th>
+            <th style="width:50%">Svenska</th>
+          </tr>
+        </thead>
+        <tbody id="extra-body">
+          <tr><td>Normal Stress</td><td>Normalspänning</td></tr>
+          <tr><td>Normal Force</td><td>Normalkraft</td></tr>
+          <tr><td>Internal Force</td><td>Inre kraft</td></tr>
+          <tr><td>External Force</td><td>Yttre kraft</td></tr>
+          <tr><td>Cross-sectional Area</td><td>Tvärsnittsarea</td></tr>
+          <tr><td>Neutral Axis</td><td>Neutralaxel</td></tr>
+          <tr><td>Linear Elasticity</td><td>Linjär elasticitet</td></tr>
+          <tr><td>Hooke’s Law</td><td>Hookes lag</td></tr>
+          <tr><td>Curvature</td><td>Krökning</td></tr>
+          <tr><td>Compatibility Conditions</td><td>Kompatibilitetsvillkor</td></tr>
+          <tr><td>Statical Determinacy</td><td>Statisk bestämdhet</td></tr>
+          <tr><td>Statical Indeterminacy</td><td>Statisk obestämdhet</td></tr>
+          <tr><td>Elastic Line</td><td>Elastiska linjen</td></tr>
+          <tr><td>Plane Stress</td><td>Plan spänning</td></tr>
+          <tr><td>Plane Strain</td><td>Plan töjning</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <p class="footer">
+      Tips: Sökfältet matchar både engelska och svenska. Klicka på “Core/Additional” för att filtrera.
+    </p>
+  </div>
+
+  <script>
+    const q = document.getElementById("q");
+    const chips = [...document.querySelectorAll(".chip")];
+    let activeFilter = "all";
+
+    function setCounts() {
+      const coreVisible = [...document.querySelectorAll("#core-body tr")].filter(r => r.style.display !== "none").length;
+      const extraVisible = [...document.querySelectorAll("#extra-body tr")].filter(r => r.style.display !== "none").length;
+      document.getElementById("core-count").textContent = coreVisible + " terms";
+      document.getElementById("extra-count").textContent = extraVisible + " terms";
+    }
+
+    function applyFilter() {
+      const term = (q.value || "").trim().toLowerCase();
+
+      const sections = [
+        { key: "core", body: document.getElementById("core-body"), section: document.getElementById("core-section") },
+        { key: "extra", body: document.getElementById("extra-body"), section: document.getElementById("extra-section") },
+      ];
+
+      sections.forEach(({ key, body, section }) => {
+        // Section visibility by chip filter
+        const allowedByChip = (activeFilter === "all" || activeFilter === key);
+        section.style.display = allowedByChip ? "" : "none";
+
+        // Row filtering by search term (still compute even if section hidden)
+        [...body.querySelectorAll("tr")].forEach(tr => {
+          const text = tr.innerText.toLowerCase();
+          const matches = term === "" || text.includes(term);
+          tr.style.display = matches ? "" : "none";
+        });
+      });
+
+      setCounts();
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener("click", () => {
+        chips.forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        activeFilter = chip.dataset.filter;
+        applyFilter();
+      });
+    });
+
+    q.addEventListener("input", applyFilter);
+
+    // Init
+    applyFilter();
+  </script>
+</body>
+</html>
