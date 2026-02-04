@@ -7526,7 +7526,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -7563,7 +7563,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [59]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#kod från formelblad</span>
@@ -7604,7 +7604,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [60]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Lösning baserat på frihetsgrader etc enligt ovan</span>
@@ -7706,12 +7706,12 @@ a7=1.28150896406816*L*P/EA
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=57bd09f2">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=57bd09f2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#från formelblad</span>
@@ -7727,19 +7727,6 @@ a7=1.28150896406816*L*P/EA
             <span class="n">Ksystem</span><span class="p">[</span><span class="n">element_dof</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">element_dof</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">Kel</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">Ksystem</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>a_res=Matrix([[0], [-4.09728113095662*L*P/EA], [0], [0], [1.14533965718844*L*P/EA], [0]])
-</pre>
 </div>
 </div>
 </div>
@@ -7777,7 +7764,7 @@ a7=1.28150896406816*L*P/EA
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#lösningen med geoemtri och dof enligt ovan</span>
@@ -7803,7 +7790,7 @@ a7=1.28150896406816*L*P/EA
 <span class="c1">#stångelement 3</span>
 <span class="n">alpha3</span><span class="o">=</span><span class="mf">30.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span> 
 <span class="n">s</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha3</span><span class="p">);</span> <span class="n">c</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha3</span><span class="p">);</span>
-<span class="n">Kel3</span><span class="o">=</span><span class="n">Kel</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">EA</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="n">Kel3</span><span class="o">=</span><span class="n">Kel</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">EA</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">L</span><span class="p">)</span> 
 <span class="n">element_dof</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> 
 <span class="n">Kmatris3</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">Kmatris3</span><span class="o">=</span><span class="n">assem</span><span class="p">(</span><span class="n">Kel3</span><span class="p">,</span><span class="n">Kmatris3</span><span class="p">,</span><span class="n">element_dof</span><span class="p">)</span>
@@ -7838,7 +7825,7 @@ a7=1.28150896406816*L*P/EA
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>a_res=Matrix([[0], [-4.03100857799627*L*P/EA], [0], [0], [0.997415951833645*L*P/EA], [0]])
+<pre>a_res=Matrix([[0], [-4.09728113095662*L*P/EA], [0], [0], [1.14533965718844*L*P/EA], [0]])
 </pre>
 </div>
 </div>
